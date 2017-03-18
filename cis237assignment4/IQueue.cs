@@ -9,7 +9,7 @@ namespace cis237assignment4
     interface IQueue<T>
     {
         void Enqueue(T data);
-        T Dequeue(T data);
+        T Dequeue();
 
         bool IsEmpty { get; }
 

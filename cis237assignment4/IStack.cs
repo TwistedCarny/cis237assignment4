@@ -9,7 +9,7 @@ namespace cis237assignment4
     interface IStack<T>
     {
         void Push(T data);
-        T Pop(T data);
+        T Pop();
 
         bool IsEmpty { get; }
 

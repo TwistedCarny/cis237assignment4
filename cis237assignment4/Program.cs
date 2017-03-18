@@ -13,6 +13,20 @@ namespace cis237assignment4
             //Create a new droid collection and set the size of it to 100.
             IDroidCollection droidCollection = new DroidCollection(100);
 
+            droidCollection.Add("Bronze", "Protocol", "Blue", 5);
+            
+            droidCollection.Add("Bronze", "Protocol", "green", 6);
+            droidCollection.Add("Bronze", "Janitor", "yellow", false, true, true, false, false);
+            droidCollection.Add("Bronze", "Astromech", "Blue", true, false, true, true, 4);
+            droidCollection.Add("Bronze", "Utility", "Blue", true, false, true);
+            droidCollection.Add("Bronze", "Astromech", "Red", true, true, true, true, 8);
+            droidCollection.Add("Bronze", "Utility", "green", false, false, true);
+            droidCollection.Add("Bronze", "Janitor", "red", true, false, true, true, false);
+            droidCollection.Add("Bronze", "Janitor", "Blue", true, true, false, true, false);
+            droidCollection.Add("Bronze", "Protocol", "red", 2);
+            droidCollection.Add("Bronze", "Utility", "red", true, true, false);
+            droidCollection.Add("Bronze", "Astromech", "yellow", true, false, true, false, 2);
+
             //Create a user interface and pass the droidCollection into it as a dependency
             UserInterface userInterface = new UserInterface(droidCollection);
 
@@ -26,7 +40,7 @@ namespace cis237assignment4
             int choice = userInterface.GetMenuChoice();
 
             //While the choice is not equal to 3, continue to do work with the program
-            while (choice != 3)
+            while (choice != 4)
             {
                 //Test which choice was made
                 switch (choice)
@@ -38,6 +52,10 @@ namespace cis237assignment4
 
                     //Choose to Print the droid
                     case 2:
+                        userInterface.PrintDroidList();
+                        break;
+                    case 3:
+                        droidCollection.SortByModel();
                         userInterface.PrintDroidList();
                         break;
                 }

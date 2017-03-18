@@ -46,7 +46,7 @@ namespace cis237assignment4
             }
         }
 
-        public T Pop(T data)
+        public T Pop()
         {
             if (IsEmpty)
             {

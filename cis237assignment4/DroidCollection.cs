@@ -15,6 +15,13 @@ namespace cis237assignment4
         //Private variable to hold the length of the Collection
         private int lengthOfCollection;
 
+        private Stack<IDroid> astromechStack;
+        private Stack<IDroid> janitorStack;
+        private Stack<IDroid> utilityStack;
+        private Stack<IDroid> protocolStack;
+
+        private Queue<IDroid> droidQueue;
+
         //Constructor that takes in the size of the collection.
         //It sets the size of the internal array that will be used.
         //It also sets the length of the collection to zero since nothing is added yet.
@@ -24,6 +31,13 @@ namespace cis237assignment4
             droidCollection = new IDroid[sizeOfCollection];
             //set length of collection to 0
             lengthOfCollection = 0;
+
+            astromechStack = new Stack<IDroid>();
+            janitorStack = new Stack<IDroid>();
+            utilityStack = new Stack<IDroid>();
+            protocolStack = new Stack<IDroid>();
+
+            droidQueue = new Queue<IDroid>();
         }
 
         //The Add method for a Protocol Droid. The parameters passed in match those needed for a protocol droid
@@ -127,7 +141,63 @@ namespace cis237assignment4
 
         public void SortByModel()
         {
-            
+            IDroid tempDroid;
+            foreach(IDroid droid in droidCollection)
+            {
+                if(droid != null)
+                {
+                    if (droid is AstromechDroid)
+                    {
+                        astromechStack.Push(droid);
+                    }
+                    else if (droid is JanitorDroid)
+                    {
+                        janitorStack.Push(droid);
+                    }
+                    else if (droid is UtilityDroid)
+                    {
+                        utilityStack.Push(droid);
+                    }
+                    else if (droid is ProtocolDroid)
+                    {
+                        protocolStack.Push(droid);
+                    }
+                }
+                
+            }
+
+            while(!astromechStack.IsEmpty)
+            {
+                tempDroid = astromechStack.Pop();
+                droidQueue.Enqueue(tempDroid);
+            }
+
+            while(!janitorStack.IsEmpty)
+            {
+                tempDroid = janitorStack.Pop();
+                droidQueue.Enqueue(tempDroid);
+            }
+
+            while (!utilityStack.IsEmpty)
+            {
+                tempDroid = utilityStack.Pop();
+                droidQueue.Enqueue(tempDroid);
+            }
+
+            while (!protocolStack.IsEmpty)
+            {
+                tempDroid = protocolStack.Pop();
+                droidQueue.Enqueue(tempDroid);
+            }
+
+            int i = 0;
+            while(!droidQueue.IsEmpty)
+            {
+                tempDroid = droidQueue.Dequeue();
+                droidCollection[i] = tempDroid;
+                i++;
+            }
+
         }
     }
 }

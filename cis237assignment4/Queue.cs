@@ -50,7 +50,7 @@ namespace cis237assignment4
             _size++;
         }
 
-        public T Dequeue(T data)
+        public T Dequeue()
         {
             if (IsEmpty)
             {
