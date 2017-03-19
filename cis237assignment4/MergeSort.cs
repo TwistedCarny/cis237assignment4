@@ -10,7 +10,7 @@ namespace cis237assignment4
     {
         private static void Merge(IComparable[] a, IComparable[] aux, int low, int mid, int high)
         {
-            for(int k = low; low <= high; k++)
+            for(int k = low; k <= high; k++)
             {
                 aux[k] = a[k];
             }
@@ -22,7 +22,7 @@ namespace cis237assignment4
             {
                 if (i > mid)
                     a[k] = aux[j++];
-                else if (i > high)
+                else if (j > high)
                     a[k] = aux[i++];
                 else if (Less(aux[j], aux[i]))
                     a[k] = aux[j++];
@@ -40,10 +40,10 @@ namespace cis237assignment4
             Merge(a, aux, low, mid, high);
         }
 
-        public static void Sort(IComparable[] a)
+        public static void Sort(IComparable[] a, int length)
         {
-            IComparable[] aux = new IComparable[a.Length];
-            Sort(a, aux, 0, a.Length - 1);
+            IComparable[] aux = new IComparable[length];
+            Sort(a, aux, 0, length - 1);
         }
 
         private static bool Less(IComparable v, IComparable w)

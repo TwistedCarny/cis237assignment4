@@ -31,7 +31,9 @@ namespace cis237assignment4
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
-            Console.WriteLine("3. Exit the program");
+            Console.WriteLine("3. Sort by droid model");
+            Console.WriteLine("4. Sort by droid total cost");
+            Console.WriteLine("5. Exit the program");
         }
 
         //Method to get a menu choice
@@ -298,6 +300,11 @@ namespace cis237assignment4
             //The only droid that we can add with this criteria is a protocol droid, so add it to the droid collection
             this.droidCollection.Add(Material, Model, Color, choice);
 
+        }
+
+        public void Output(string message)
+        {
+            Console.WriteLine(message);
         }
 
         //Method to figure out which of the utility droids the user is creating, and then work on collecting the rest

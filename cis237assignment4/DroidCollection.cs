@@ -199,5 +199,10 @@ namespace cis237assignment4
             }
 
         }
+
+        public void SortByCost()
+        {
+            MergeSort.Sort(droidCollection, lengthOfCollection);
+        }
     }
 }

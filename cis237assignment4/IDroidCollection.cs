@@ -16,7 +16,8 @@ namespace cis237assignment4
         bool Add(string Material, string Model, string Color, bool HasToolBox, bool HasComputerConnection, bool HasArm, bool HasFireExtinguisher, int NumberOfShips);
 
         void SortByModel();
-        
+        void SortByCost();
+
         //Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
     }
