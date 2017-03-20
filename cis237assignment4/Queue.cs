@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Westin Curtis - CIS 237 - 3/20/2017
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +10,14 @@ namespace cis237assignment4
 {
     class Queue<T> : IQueue<T>
     {
-        protected class Node
+        protected class Node // Node class that holds any generic data
         {
             public T Data { get; set; }
             public Node Next { get; set; }
         }
 
-        protected Node _head;
-        protected Node _tail;
+        protected Node _head; // Holds the head pointer of the linked list
+        protected Node _tail; // Holds the tail pointer of the linked list
         protected int _size;
 
         public bool IsEmpty
@@ -28,6 +30,7 @@ namespace cis237assignment4
             get { return _size; }
         }
 
+        // Add item to the queue
         public void Enqueue(T data)
         {
             Node oldTail = _tail;
@@ -50,6 +53,7 @@ namespace cis237assignment4
             _size++;
         }
 
+        // Remove item from the queue
         public T Dequeue()
         {
             if (IsEmpty)

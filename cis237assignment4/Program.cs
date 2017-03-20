@@ -13,8 +13,8 @@ namespace cis237assignment4
             //Create a new droid collection and set the size of it to 100.
             IDroidCollection droidCollection = new DroidCollection(100);
 
-            droidCollection.Add("Bronze", "Protocol", "Blue", 5);
-            
+            // Initial collection of droids
+            droidCollection.Add("Bronze", "Protocol", "Blue", 5);   
             droidCollection.Add("Bronze", "Protocol", "green", 6);
             droidCollection.Add("Bronze", "Janitor", "yellow", false, true, true, false, false);
             droidCollection.Add("Bronze", "Astromech", "Blue", true, false, true, true, 4);
@@ -55,6 +55,7 @@ namespace cis237assignment4
                         userInterface.PrintDroidList();
                         break;
                     case 3:
+                        // Output the droid collection before and after sorting
                         userInterface.Output("---------------- Before Sort ----------------");
                         userInterface.PrintDroidList();
                         userInterface.Output("---------------- After Sort ----------------");
@@ -62,6 +63,7 @@ namespace cis237assignment4
                         userInterface.PrintDroidList();
                         break;
                     case 4:
+                        // Output the droid collection before and after sorting
                         userInterface.Output("---------------- Before Sort ----------------");
                         userInterface.PrintDroidList();
                         userInterface.Output("---------------- After Sort ----------------");
